@@ -1,4 +1,14 @@
 <h1>カテゴリー追加画面</h1>
+<?php $__errorArgs = ['main_category_name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+<p style="color:red; font-weight:bold;"><?php echo e($message); ?></p> <!-- エラーメッセージを表示 -->
+<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
 <p class="" style="margin-top:20px">新規メインカテゴリー</p>
 <input type="text" class="w-100" name="main_category_name" form="mainCategoryRequest">
 <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="mainCategoryRequest">
